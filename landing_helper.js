@@ -30,10 +30,18 @@ $(document).ready(function () {
             function (response) {
                 console.log(response);
                 $.each(response, function (key, value) {
-                    $("#accountInfoDiv").append("<p class='inline-p'>" + key + " : </p>");
+                    $("#accountInfoDiv").append("<p class='inline-p'>" + key + " : " + "</p>");
                     $("#accountInfoDiv").append("<p class='inline-p'>" + value + "</p>");
                     $("#accountInfoDiv").append("<br>");
-                })
+                });
+                if (response.id) {
+                    $("#netShareLink").html("Your network share mapping is: https://d.docs.live.net/" + response.id);
+                    $("#netShareLink").css({ 'color': 'green' });
+                }
+                else {
+                    $("#netShareLink").html("Response back did not include the user id...");
+                    $("#netShareLink").css({ 'color': 'red' });
+                }
             },
             function (badresponse) {
                 console.log(badresponse);
