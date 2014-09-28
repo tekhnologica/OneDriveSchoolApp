@@ -29,7 +29,7 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response);
-                response.each(function (key, value) {
+                $.each(response, function (key, value) {
                     console.log(key);
                     console.log(value);
                 })
