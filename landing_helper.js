@@ -57,6 +57,18 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response.data);
+                var count = 0;
+
+                for (var i = 0; i < response.data.length; i++) {
+                    $("#contactsDiv").append("<div id=contact" + String(count) + "></div>");
+                    count += 1;
+                    console.log(response.data[i]);
+                    $.each(response.data[i], function (key, val) {
+                        $("#contact" + String(count)).append("<p class='inline-p'><strong> " + key + " : " + val + " </p>");
+                    });
+
+                }
+                $("contactsBtn").hide();
             },
             function (badresponse) {
                 console.log(badresponse.error);

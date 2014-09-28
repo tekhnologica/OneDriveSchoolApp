@@ -14,7 +14,7 @@ body {
     padding:  10px 10px 10px 10px;
 }
 
-.infoDiv {
+.contentDiv.infoDiv {
     line-height:  60%;
 }
 
