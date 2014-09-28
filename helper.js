@@ -10,7 +10,7 @@ $(document).ready(function () {
         sess = WL.getSession();
         $("#statusText").html("You are already logged in! Redirecting to landing page...");
         $("#statusText").css({ 'color': 'green' });
-        setTimeout(function () {window.location.href = "landing.html#accessToken=" + sess.access_token}, 4000);
+        setTimeout(function (sess) {window.location.href = "landing.html#accessToken=" + sess.access_token}, 4000);
     }
     catch (err) {
         sess = null;
