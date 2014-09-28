@@ -4,7 +4,7 @@ function parseURLParams() {
         var split = window.location.href.slice(paramStart + 1);
         console.log(split);
     }
-    console.log(sliced);
+    console.log(split);
 }
 
 $(document).ready(function () {
@@ -60,8 +60,10 @@ $(document).ready(function () {
                 var count = 0;
 
                 for (var i = 0; i < response.data.length; i++) {
-                    var struc = "<div id='contactDiv" + String(count) + "'></div>";
-                    $("#contactsDiv").append(struc);
+                    jQuery('<div>', {
+                        id: "contactDiv" + String(count)
+                    }).appendTo("#contactsDiv");
+
                     count += 1;
                     console.log(response.data[i]);
                     $.each(response.data[i], function (key, val) {
