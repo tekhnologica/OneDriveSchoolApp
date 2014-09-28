@@ -60,11 +60,11 @@ $(document).ready(function () {
                 var count = 0;
 
                 for (var i = 0; i < response.data.length; i++) {
+                    count += 1;
                     jQuery('<div>', {
                         id: "contactDiv" + String(count)
                     }).appendTo("#contactsDiv");
 
-                    count += 1;
                     console.log(response.data[i]);
                     $.each(response.data[i], function (key, val) {
                         var name = "#contactDiv" + String(count);
