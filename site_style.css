@@ -5,7 +5,7 @@ body {
     background-color: white;
 }
 
-#contentDiv {
+.contentDiv {
     //background-color:  #ece4ba;
     border-style:  solid;
     border-width:  2px;
