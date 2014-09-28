@@ -9,7 +9,8 @@ $(document).ready(function () {
     $("#loadBtn").click(function () {
         WL.api({
             path: 'me',
-            method: 'GET'
+            method: 'GET',
+            access_token: WL.getSession().access_token
         }).then(
             function (response) {
                 console.log(response);
