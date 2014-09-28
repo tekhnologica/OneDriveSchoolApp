@@ -21,7 +21,7 @@ $(document).ready(function () {
         parseURLParams();
     }
 
-    $("#loadBtn").click(function () {
+    $("#accountBtn").click(function () {
         WL.api({
             path: 'me',
             method: 'GET',
@@ -47,5 +47,54 @@ $(document).ready(function () {
                 console.log(badresponse);
             }
         );
+    });
+
+    $("#contactsBtn").click(function () {
+        WL.api({
+            path: '/me/contacts',
+            method: 'GET',
+            access_token: sess.access_token
+        }).then(
+            function (response) {
+                console.log(response);
+            },
+            function (badresponse) {
+                console.log(badresponse);
+            }
+        );
+    });
+
+    $("#friendsBtn").click(function () {
+        WL.api({
+            path: '/me/friends',
+            method: 'GET',
+            access_token: sess.access_token
+        }).then(
+            function (response) {
+
+            },
+            function (badresponse) {
+
+            }
+        );
+    });
+
+    $("#eventsBtn").click(function () {
+        WL.api({
+            path: '/me/events',
+            method: 'GET',
+            access_token: sess.access_token
+        }).then(
+            function (response) {
+                console.log(response);
+            },
+            function (badresponse) {
+                console.log(badresponse);
+            }
+        );
+    });
+
+    $(".contentDiv").dblclick(function () {
+
     });
 });
