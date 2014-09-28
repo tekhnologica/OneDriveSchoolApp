@@ -60,11 +60,13 @@ $(document).ready(function () {
                 var count = 0;
 
                 for (var i = 0; i < response.data.length; i++) {
-                    $("#contactsDiv").append("<div id='contactDiv" + String(count) + "'></div>");
+                    var struc = "<div id='contactDiv" + String(count) + "'></div>";
+                    $("#contactsDiv").append(struc);
                     count += 1;
                     console.log(response.data[i]);
                     $.each(response.data[i], function (key, val) {
-                        $("#contactDiv" + String(count)).append("<p class='inline-p'><strong> " + key + " :</strong> " + val + " </p>");
+                        var name = "#contactDiv" + String(count);
+                        $(name).append("<p class='inline-p'><strong> " + key + " :</strong> " + val + " </p>");
                     });
 
                 }
