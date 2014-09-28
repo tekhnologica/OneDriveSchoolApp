@@ -28,7 +28,9 @@ $(document).ready(function () {
         }
         else {
             console.log('you are already logged in');
+            console.log('session info:');
             console.log(sess);
+            window.location.href("landing.html").delay(3000);
         }
     });
 });
