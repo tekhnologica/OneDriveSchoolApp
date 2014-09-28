@@ -7,14 +7,19 @@ $(document).ready(function () {
 
     $("#statusDiv").hide();
     $("#loginBtn").click(function () {
-        WL.login({
-            scope: ["wl.skydrive", "wl.basic"]
-        }).then(
-            function (resonse) {
-                console.log(response);
-            },
-            function (badresponse) {
-                console.log(badresponse);
-            })
+        if (!WL.getSession()) {
+            WL.login({
+                scope: ["wl.skydrive", "wl.basic"]
+            }).then(
+                function (resonse) {
+                    console.log(response);
+                },
+                function (badresponse) {
+                    console.log(badresponse);
+                })
+        }
+        else {
+            console.log('you are already logged in');
+        }
     });
 });
