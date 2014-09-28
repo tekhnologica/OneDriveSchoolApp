@@ -60,7 +60,7 @@ $(document).ready(function () {
                 var count = 0;
 
                 for (var i = 0; i < response.data.length; i++) {
-                    $("#contactsDiv").append("<div class='contactDiv" + Strint(count) + "'></div>");
+                    $("#contactsDiv").append("<div class='contactDiv" + String(count) + "'></div>");
                     count += 1;
                     console.log(response.data[i]);
                     $.each(response.data[i], function (key, val) {
