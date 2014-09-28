@@ -1,5 +1,9 @@
 function parseURLParams() {
-    var sliced = window.location.href.slice(window.location.href.indexOf('#') + 1)[0].split('&');
+    paramStart = window.location.href.indexOf('#');
+    if (paramStart != -1) {
+        var split = window.location.href.slice(paramStart + 1);
+        console.log(split);
+    }
     console.log(sliced);
 }
 
@@ -10,8 +14,12 @@ $(document).ready(function () {
         redirect_uri: 'http://ec2-54-69-112-56.us-west-2.compute.amazonaws.com/landing.html'
     });
     var sess = WL.getSession();
-    parseURLParams();
-    console.log(sess);
+    if (sess != null) {
+        console.log(sess);
+    }
+    else {
+        parseURLParams();
+    }
 
     $("#loadBtn").click(function () {
         WL.api({
@@ -21,6 +29,10 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response);
+                response.each(function (key, value) {
+                    console.log(key);
+                    console.log(value);
+                })
             },
             function (badresponse) {
                 console.log(badresponse);
