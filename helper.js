@@ -14,7 +14,7 @@ $(document).ready(function () {
         sess = WL.getSession();
         $("#statusText").html("You are already logged in! Redirecting to landing page...");
         $("#statusText").css({ 'color': 'green' });
-        setTimeout(loadLanding(), 4000);
+        setTimeout(loadLanding, 4000);
     }
     catch (err) {
         sess = null;
