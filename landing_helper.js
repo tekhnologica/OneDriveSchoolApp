@@ -62,13 +62,14 @@ $(document).ready(function () {
                 for (var i = 0; i < response.data.length; i++) {
                     count += 1;
                     jQuery('<div>', {
-                        id: "contactDiv" + String(count)
+                        id: "contactDiv" + String(count),
+                        class: "contactDiv"
                     }).appendTo("#contactsDiv");
 
                     console.log(response.data[i]);
                     $.each(response.data[i], function (key, val) {
                         var name = "#contactDiv" + String(count);
-                        $(name).append("<p class='inline-p'><strong> " + key + " :</strong> " + val + " </p>");
+                        $(name).append("<p><strong> " + key + " :</strong> " + val + " </p>");
                     });
 
                 }

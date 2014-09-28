@@ -29,3 +29,13 @@ body {
 #statusText {
     color:  blue;
 }
+
+.contactDiv {
+    color:  #fdfcb4;
+    margin-left: 10%;
+    margin-right:  10%;
+    border-style:  dotted;
+    border-width:  1px;
+    border-radius:  8px;
+    padding:  10px 10px 10px 10px;
+}
