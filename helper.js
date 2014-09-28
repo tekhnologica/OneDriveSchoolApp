@@ -1,3 +1,7 @@
+function loadLanding() {
+    window.location.href = "landing.html";
+};
+
 $(document).ready(function () {
 
     WL.init({
@@ -30,9 +34,6 @@ $(document).ready(function () {
             console.log('you are already logged in');
             console.log('session info:');
             console.log(sess);
-            function loadLanding() {
-                window.location.href = "landing.html";
-            }
             loadLanding().delay(3000);
         }
     });
