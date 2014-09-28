@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     var sess = WL.getSession();
     if (sess != null) {
+        console.log(sess.access_token);
         $("#loginBtn").hide();
         $("#statusText").html("You are already logged in! Redirecting to landing page...");
         $("#statusText").css({ 'color': 'green' });
