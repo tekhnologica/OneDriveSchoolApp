@@ -1,3 +1,5 @@
+var sess;
+
 $(document).ready(function () {
 
     WL.init({
@@ -5,13 +7,13 @@ $(document).ready(function () {
         redirect_uri: 'http://ec2-54-69-112-56.us-west-2.compute.amazonaws.com/landing.html'
     });
 
-    var sess = WL.getSession();
+    sess = WL.getSession();
     if (sess != null) {
-        console.log(sess.access_token);
+        console.log(sess);
         $("#loginBtn").hide();
         $("#statusText").html("You are already logged in! Redirecting to landing page...");
         $("#statusText").css({ 'color': 'green' });
-        setTimeout(function (sess) { window.location.href = "landing.html#accessToken=" + sess.access_token }, 4000);
+        setTimeout(function () { window.location.href = "landing.html#accessToken=" + sess.access_token }, 4000);
     }
 
     $("#loginBtn").click(function () {
