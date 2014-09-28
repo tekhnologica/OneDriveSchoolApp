@@ -30,7 +30,10 @@ $(document).ready(function () {
             console.log('you are already logged in');
             console.log('session info:');
             console.log(sess);
-            window.location.href("landing.html").delay(3000);
+            function loadLanding() {
+                window.location.href = "landing.html";
+            }
+            loadLanding().delay(3000);
         }
     });
 });
