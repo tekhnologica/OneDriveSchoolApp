@@ -7,7 +7,15 @@ $(document).ready(function () {
 
     $("#statusDiv").hide();
     $("#loginBtn").click(function () {
-        if (!WL.getSession()) {
+        var sess;
+        try {
+            sess = WL.getSession();
+        }
+        catch (err) {
+            sess = null;
+        }
+
+        if (!sess) {
             WL.login({
                 scope: ["wl.skydrive", "wl.basic"]
             }).then(
@@ -20,6 +28,7 @@ $(document).ready(function () {
         }
         else {
             console.log('you are already logged in');
+            console.log(sess);
         }
     });
 });
