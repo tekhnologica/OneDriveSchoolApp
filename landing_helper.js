@@ -30,7 +30,7 @@ $(document).ready(function () {
             function (response) {
                 console.log(response);
                 $.each(response, function (key, value) {
-                    $("#accountInfoDiv").append("<p class='inline-p'>" + key + " : " + "</p>");
+                    $("#accountInfoDiv").append("<p class='inline-p'><strong>" + key + " </strong>: " + "</p>");
                     $("#accountInfoDiv").append("<p class='inline-p'>" + value + "</p>");
                     $("#accountInfoDiv").append("<br>");
                 });
