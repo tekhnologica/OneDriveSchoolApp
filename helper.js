@@ -9,17 +9,19 @@ $(document).ready(function () {
         redirect_uri: 'http://ec2-54-69-112-56.us-west-2.compute.amazonaws.com/landing.html'
     });
 
-    $("#statusDiv").hide();
-    $("#loginBtn").click(function () {
-        var sess;
-        try {
-            sess = WL.getSession();
-        }
-        catch (err) {
-            sess = null;
-        }
+    var sess;
+    try {
+        sess = WL.getSession();
+        $("#statusText").html("You are already logged in! Redirecting to landing page...");
+        $("#statusText").css({ 'color': 'green' });
+        setTimeout(loadLanding(), 4000);
+    }
+    catch (err) {
+        sess = null;
+    }
 
-        if (!sess) {
+    $("#loginBtn").click(function () {
+
             WL.login({
                 scope: ["wl.skydrive", "wl.basic"]
             }).then(
@@ -29,12 +31,5 @@ $(document).ready(function () {
                 function (badresponse) {
                     console.log(badresponse);
                 })
-        }
-        else {
-            console.log('you are already logged in');
-            console.log('session info:');
-            console.log(sess);
-            loadLanding().delay(3000);
-        }
     });
 });
