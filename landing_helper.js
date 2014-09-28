@@ -30,8 +30,9 @@ $(document).ready(function () {
             function (response) {
                 console.log(response);
                 $.each(response, function (key, value) {
-                    console.log(key);
-                    console.log(value);
+                    $("#accountInfoDiv").append("<p class='inline-p'>" + key + " : </p>");
+                    $("#accountInfoDiv").append("<p class='inline-p'>" + value + "</p>");
+                    $("#accountInfoDiv").append("<br>");
                 })
             },
             function (badresponse) {
