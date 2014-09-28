@@ -1,2 +1,27 @@
 body {
+    margin-left:  20%;
+    margin-right:  20%;
+    font-size:  medium;
+    background-color: white;
+}
+
+#contentDiv {
+    //background-color:  #ece4ba;
+    border-style:  solid;
+    border-width:  2px;
+    border-radius:  16px;
+    border-color:  black;
+    padding:  10px 10px 10px 10px;
+}
+
+#statusDiv {
+
+}
+
+.inline-p {
+    display:  inline-block;
+    font-size:  160%;
+}
+#statusText {
+    color:  blue;
 }
