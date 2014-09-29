@@ -16,6 +16,8 @@ body {
 
 .contentDiv.infoDiv {
     line-height:  60%;
+    max-height:  600px;
+    overflow-style:  scrollbar;
 }
 
 #statusDiv {
@@ -38,4 +40,14 @@ body {
     border-width:  1px;
     border-radius:  8px;
     padding:  10px 10px 10px 10px;
+}
+
+#meDiv {
+    background-color:  #fdfcb4;
+    margin-left:  10%;
+    margin-right:  10%;
+    border-style:  dotted;
+    border-width:  1px;
+    border-radius:  8px;
+    padding: 10px 10px 10px 10px;
 }

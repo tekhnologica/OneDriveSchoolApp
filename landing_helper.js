@@ -29,11 +29,14 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response);
+                jquery("<div>", {
+                    id: "meDiv"
+                }).appendTo("#accountInfoDiv");
+
                 $.each(response, function (key, value) {
-                    $("#accountInfoDiv").append("<p class='inline-p'><strong>" + key + " </strong>: " + "</p>");
-                    $("#accountInfoDiv").append("<p class='inline-p'>" + value + "</p>");
-                    $("#accountInfoDiv").append("<br>");
+                    $("#meDiv").append("<p'><strong>" + key + " </strong>: " + value + "</p>");
                 });
+
                 if (response.id) {
                     $("#netShareLink").html("Your network share mapping is: https://d.docs.live.net/" + response.id);
                     $("#netShareLink").css({ 'color': 'green' });
