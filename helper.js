@@ -19,10 +19,11 @@ $(document).ready(function () {
     $("#loginBtn").click(function () {
 
         WL.login({
-            scope: ["wl.skydrive", "wl.basic", "wl.calendars"]
+            scope: ["wl.skydrive", "wl.basic", "wl.calendars", "wl.people"]
         }).then(
                 function (resonse) {
                     console.log(response);
+                    
                 },
                 function (badresponse) {
                     console.log(badresponse);
