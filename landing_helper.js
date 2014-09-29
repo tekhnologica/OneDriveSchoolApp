@@ -138,7 +138,7 @@ $(document).ready(function () {
                     $("#eventDiv0").append("<p>This user either has no calendar events or they are all set to 'private'</p>");
                 }
                 else {
-                     for (var i = 0; i < response.data.length; i++) {
+                    for (var i = 0; i < response.data.length; i++) {
                         count++;
                         jQuery("<div>", {
                             id: "eventDiv" + String(count),
@@ -147,7 +147,7 @@ $(document).ready(function () {
                         $.each(response.data[i], function (key, val) {
                             $("#eventDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
                         });
-                    }                   
+                    }
                 }
 
             },
@@ -157,7 +157,7 @@ $(document).ready(function () {
         );
     });
 
-        $("#calendarsBtn").click(function () {
+    $("#calendarsBtn").click(function () {
         WL.api({
             path: '/me/calendars',
             method: 'GET',
@@ -175,16 +175,16 @@ $(document).ready(function () {
                     $("#calendarDiv0").append("<p>This user has no calendars</p>");
                 }
                 else {
-                     for (var i = 0; i < response.data.length; i++) {
+                    for (var i = 0; i < response.data.length; i++) {
                         count++;
                         jQuery("<div>", {
                             id: "calendarDiv" + String(count),
                             class: "calendarDiv"
                         }).appendTo("#calendarsDiv");
                         $.each(response.data[i], function (key, val) {
-                            $("#calendarDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
+                            $("#calendarDiv" + String(count)).append("<p class='" + key + "'><strong>" + key + " :</strong> " + val + "</p>");
                         });
-                    }                   
+                    }
                 }
 
             },
@@ -193,6 +193,10 @@ $(document).ready(function () {
             }
         );
     });
+
+    $(".calendarDiv").click(function () {
+        alert('you clicked on a calendar!');
+    })
 
     $(".contentDiv").dblclick(function () {
 
