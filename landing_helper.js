@@ -195,7 +195,7 @@ $(document).ready(function () {
     });
 
     $("#calendarsDiv").on("click", ".calendarDiv", function () {
-        console.log($(this).id);
+        console.log($(this).attr('id'));
     });
 
     $(".contentDiv").dblclick(function () {
