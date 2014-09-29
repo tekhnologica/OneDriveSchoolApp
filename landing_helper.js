@@ -194,9 +194,9 @@ $(document).ready(function () {
         );
     });
 
-    $(".calendarDiv").click(function () {
+    $("#calendarsDiv").on("click", "div.calendarDiv", function () {
         alert('you clicked on a calendar!');
-    })
+    });
 
     $(".contentDiv").dblclick(function () {
 
