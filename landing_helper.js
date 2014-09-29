@@ -91,7 +91,28 @@ $(document).ready(function () {
             access_token: sess.access_token
         }).then(
             function (response) {
-                console.log(response)
+                console.log(response.data)
+                if (!response.data) {
+                    jQuery("<div>", {
+                        id: "friendDiv0",
+                        class: "friendDiv"
+                    }).appendTo("#friendsDiv");
+                    $("#friendDiv0").append("<h3>No Friends Found...</h3>");
+                    $("#friendDiv0").append("<p>Maybe this account does not use Xbox Live?</p>");
+                }
+                else {
+                    var count = 0;
+                    for (var i = 0; i < response.data.length; i++) {
+                        count += 1;
+                        jQuery("<div>", {
+                            id: "friendDiv" + String(count),
+                            class: "friendDiv"
+                        }).appendTo("#friendsDiv");
+                        $.each(response.data[i], function (key, val) {
+                            $("#friendDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
+                        });
+                    }
+                }
             },
             function (badresponse) {
                 console.log(badresponse.error)
@@ -106,7 +127,7 @@ $(document).ready(function () {
             access_token: sess.access_token
         }).then(
             function (response) {
-                console.log(response.data);
+                console.log(response.data[0]);
             },
             function (badresponse) {
                 console.log(badresponse.error);

@@ -4,7 +4,8 @@ $(document).ready(function () {
 
     WL.init({
         client_id: '000000004012F40E',
-        redirect_uri: 'http://ec2-54-69-112-56.us-west-2.compute.amazonaws.com/landing.html'
+        redirect_uri: 'http://ec2-54-69-112-56.us-west-2.compute.amazonaws.com/landing.html',
+        response_type: 'token'
     });
 
     sess = WL.getSession();
@@ -19,7 +20,7 @@ $(document).ready(function () {
     $("#loginBtn").click(function () {
 
         WL.login({
-            scope: ["wl.skydrive", "wl.basic", "wl.calendars"]
+            scope: ["wl.skydrive", "wl.basic", "wl.calendars", "wl.photos", "wl.emails"]
         }).then(
                 function (resonse) {
                     console.log(response);
