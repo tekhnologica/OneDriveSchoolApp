@@ -29,7 +29,7 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response);
-                jquery("<div>", {
+                jQuery("<div>", {
                     id: "meDiv"
                 }).appendTo("#accountInfoDiv");
 
