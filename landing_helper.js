@@ -196,7 +196,7 @@ $(document).ready(function () {
 
     $("#calendarsDiv").on("click", ".calendarDiv", function () {
         var id = $(this).attr('id');
-        var calendar_id = $("." + id).find("#calendar_id").html();
+        var calendar_id = $("#" + id).find(".calendar_id").html();
         console.log(calendar_id);
     });
 
