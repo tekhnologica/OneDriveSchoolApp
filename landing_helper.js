@@ -92,7 +92,7 @@ $(document).ready(function () {
         }).then(
             function (response) {
                 console.log(response.data)
-                if (!response.data) {
+                if (!response.data || response.data.length === 0) {
                     jQuery("<div>", {
                         id: "friendDiv0",
                         class: "friendDiv"
