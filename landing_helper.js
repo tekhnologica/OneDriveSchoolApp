@@ -199,7 +199,7 @@ $(document).ready(function () {
         var calendar_id = $("#" + id).find(".calendar_id").html();
         var start = calendar_id.indexOf("calendar.");
         if (start > -1) {
-            console.log(calendar_id.splice(start));
+            console.log(calendar_id.slice(start));
         }
     });
 
