@@ -31,7 +31,7 @@ body {
     color:  blue;
 }
 
-.contactDiv,.friendDiv,.eventDiv {
+.contactDiv,.friendDiv,.eventDiv,.calendarDiv {
     background-color:  #fdfcb4;
     margin-left: 10%;
     margin-right:  10%;

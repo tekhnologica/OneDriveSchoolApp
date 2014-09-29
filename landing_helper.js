@@ -157,6 +157,43 @@ $(document).ready(function () {
         );
     });
 
+        $("#calendarsBtn").click(function () {
+        WL.api({
+            path: '/me/calendars',
+            method: 'GET',
+            access_token: sess.access_token
+        }).then(
+            function (response) {
+                console.log(response.data);
+                var count = 0;
+                if (!response.data || response.data.length === 0) {
+                    jQuery("<div>", {
+                        id: "calendarDiv0",
+                        class: "calendarDiv"
+                    }).appendTo("#calendarsDiv");
+                    $("#calendarDiv0").append("<h3>No calendars found...");
+                    $("#calendarDiv0").append("<p>This user has no calendars</p>");
+                }
+                else {
+                     for (var i = 0; i < response.data.length; i++) {
+                        count++;
+                        jQuery("<div>", {
+                            id: "calendarDiv" + String(count),
+                            class: "calendarDiv"
+                        }).appendTo("#calendarsDiv");
+                        $.each(response.data[i], function (key, val) {
+                            $("#calendarDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
+                        });
+                    }                   
+                }
+
+            },
+            function (badresponse) {
+                console.log(badresponse.error);
+            }
+        );
+    });
+
     $(".contentDiv").dblclick(function () {
 
     });
