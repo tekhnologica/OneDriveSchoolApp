@@ -127,7 +127,29 @@ $(document).ready(function () {
             access_token: sess.access_token
         }).then(
             function (response) {
-                console.log(response.data[0]);
+                console.log(response.data);
+                var count = 0;
+                if (!response.data || response.data.length === 0) {
+                    jQuery("<div>", {
+                        id: "eventDiv0",
+                        class: "eventDiv"
+                    }).appendTo("#eventsDiv");
+                    $("#eventDiv0").append("<h3>No events found...");
+                    $("#eventDiv0").append("<p>This user either has no calendar events or they are all set to 'private'</p>");
+                }
+                else {
+                     for (var i = 0; i < response.data.length; i++) {
+                        count++;
+                        jQuery("<div>", {
+                            id: "eventDiv" + String(count),
+                            class: "eventDiv"
+                        }).appendTo("#eventsDiv");
+                        $.each(response.data[i], function (val, key) {
+                            $("#eventDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
+                        });
+                    }                   
+                }
+
             },
             function (badresponse) {
                 console.log(badresponse.error);
