@@ -23,7 +23,12 @@ $(document).ready(function () {
         }).then(
                 function (resonse) {
                     console.log(response);
-                    
+                    jQuery("<div>", {
+                        id: "landingRedirectDiv",
+                        class: "contentDiv"
+                    }).appendto("body");
+                    $("#landingRedirectDiv").append("<h2>If Microsoft Live login did not redirect to the landing page, click the 'launch' button below</h2>");
+                    $("#landingRedirectDiv").append("<button title='load the landing page manually' id='landingLaunchBtn' href='landing.html'>Launch</button>");
                 },
                 function (badresponse) {
                     console.log(badresponse);
