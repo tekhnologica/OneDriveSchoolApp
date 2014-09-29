@@ -182,7 +182,7 @@ $(document).ready(function () {
                             class: "calendarDiv"
                         }).appendTo("#calendarsDiv");
                         $.each(response.data[i], function (key, val) {
-                            $("#calendarDiv" + String(count)).append("<p class='" + key + "'><strong>" + key + " :</strong> " + val + "</p>");
+                            $("#calendarDiv" + String(count)).append("<p class='calendar_" + key + "'><strong>" + key + " :</strong> " + val + "</p>");
                         });
                     }
                 }
@@ -195,7 +195,9 @@ $(document).ready(function () {
     });
 
     $("#calendarsDiv").on("click", ".calendarDiv", function () {
-        console.log($(this).attr('id'));
+        var id = $(this).attr('id');
+        var calendar_id = $("#" + id).find("#calendar_id").html();
+        console.log(calendar_id);
     });
 
     $(".contentDiv").dblclick(function () {
