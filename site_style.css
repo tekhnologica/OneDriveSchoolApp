@@ -17,7 +17,7 @@ body {
 .contentDiv.infoDiv {
     line-height:  60%;
     max-height:  600px;
-    overflow-style:  scrollbar;
+    overflow:  scroll;
 }
 
 #statusDiv {
