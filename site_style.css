@@ -40,6 +40,7 @@ body {
     border-width:  1px;
     border-radius:  8px;
     padding:  10px 10px 10px 10px;
+    word-wrap: break-word;
 }
 
 #meDiv {

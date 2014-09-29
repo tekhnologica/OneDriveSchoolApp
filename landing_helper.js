@@ -144,7 +144,7 @@ $(document).ready(function () {
                             id: "eventDiv" + String(count),
                             class: "eventDiv"
                         }).appendTo("#eventsDiv");
-                        $.each(response.data[i], function (val, key) {
+                        $.each(response.data[i], function (key, val) {
                             $("#eventDiv" + String(count)).append("<p><strong>" + key + " :</strong> " + val + "</p>");
                         });
                     }                   
