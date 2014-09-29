@@ -197,7 +197,7 @@ $(document).ready(function () {
     $("#calendarsDiv").on("click", ".calendarDiv", function () {
         var id = $(this).attr('id');
         var calendar_id = $("#" + id).find(".calendar_id").html();
-        var start = calendar_id.indexOf(".calendar");
+        var start = calendar_id.indexOf("calendar.");
         if (start > -1) {
             console.log(calendar_id.splice(start));
         }
