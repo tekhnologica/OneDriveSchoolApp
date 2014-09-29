@@ -106,7 +106,7 @@ $(document).ready(function () {
             access_token: sess.access_token
         }).then(
             function (response) {
-                console.log(response);
+                console.log(response.data);
             },
             function (badresponse) {
                 console.log(badresponse.error);

@@ -19,7 +19,7 @@ $(document).ready(function () {
     $("#loginBtn").click(function () {
 
         WL.login({
-            scope: ["wl.skydrive", "wl.basic", "wl.calendars", "wl.people"]
+            scope: ["wl.skydrive", "wl.basic", "wl.calendars"]
         }).then(
                 function (resonse) {
                     console.log(response);
